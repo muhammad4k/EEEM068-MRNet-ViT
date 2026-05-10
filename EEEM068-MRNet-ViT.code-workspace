@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "EEEM068-MRNet-ViT",
+			"path": "."
+		},
+		{
+			"name": "MRNet-v1.0",
+			"path": "../../Downloads/MRNet-v1.0"
+		}
+	],
+	"settings": {}
+}
