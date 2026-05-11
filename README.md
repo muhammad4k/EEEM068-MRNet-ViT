@@ -15,7 +15,10 @@ EEEM068-MRNet-ViT/
 ├── MRNet_multi_plane.ipynb    # Extra credit — multi-plane fusion (sagittal + coronal + axial)
 ├── MRNet_Extra_Credit.ipynb   # Extra credit — t-SNE feature-space visualisation & error analysis
 ├── OOD_images/                # External knee MRI images for OOD inference
+├── results/                   # Evaluation metrics and summary outputs
 ├── IEEE_MRNet_Report.pdf      # Project report
+├── requirements.txt           # Python dependencies
+├── CHANGELOG.md               # Project development history
 └── README.md
 ```
 
@@ -73,15 +76,20 @@ Extra credit notebook. Extracts [CLS] embeddings for all 120 validation exams, a
 ### Install Dependencies
 
 ```bash
+# Core dependencies
 pip install torch torchvision timm
+
+# Evaluation & visualisation
 pip install scikit-learn pandas numpy matplotlib seaborn
+
+# Utilities
 pip install Pillow tqdm huggingface_hub
 ```
 
-Or all at once:
+Or install everything at once using the requirements file:
 
 ```bash
-pip install torch torchvision timm scikit-learn pandas numpy matplotlib seaborn Pillow tqdm huggingface_hub
+pip install -r requirements.txt
 ```
 
 > **Mac users (Python 3.14):** if Jupyter can't find a package you just installed, run inside a notebook cell:
@@ -196,12 +204,21 @@ Focal Loss (γ=2) · pos_weight per class
 
 ---
 
+## Limitations & Future Work
+
+- The single-plane model uses only the coronal view; incorporating all three planes did not improve AUC, likely due to the reduced slice budget (N=2 per plane) and identical epoch count
+- Fixed slice sampling (N=4) may miss diagnostically relevant slices in longer MRI sequences
+- Meniscal tear remains the hardest condition to classify, suggesting this label may benefit from specialised augmentation or a dedicated model
+- Future directions include learnable slice attention mechanisms, larger backbones (ViT-B/16), and cross-attention fusion across planes rather than simple logit averaging
+
+---
+
 ## Authors
 
 - Yaseen Ahmed
 - Alishala Gloryalishala  
 - Devisri Prasad
-- Muhammad khalid
+- Muhammad Khalid
 - Vishal Reddy
 
 University of Surrey — MSc Artificial Intelligence
