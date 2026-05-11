@@ -1,42 +1,10 @@
-# macOS metadata
-.DS_Store
-**/.DS_Store
-
-# Python caches and local environments
+# Python
 __pycache__/
-*.py[cod]
-*$py.class
-.python-version
-.venv/
-venv/
-env/
-ENV/
-
-# Jupyter/IPython local state
-.ipynb_checkpoints/
-.ipython/
-.jupyter/
-
-# Local ML datasets (too large for GitHub)
-MRNet-v1/
-MRNet-v1.0/
-
-# Model checkpoints and learned weights (too large)
+*.pyc
 *.pth
 *.pt
-*.ckpt
-*.onnx
-
-# Wandb logs
-wandb/
-mlruns/
-
-# Scratch/temp files
-tmp/
-
-# Matplotlib/font cache
-mplconfig/
-fontlist-*.json
-
-# Folder with trailing space (Mac artifact)
-notebooks /
+.env
+MRNet-v1.0/
+*.npy
+.ipynb_checkpoints/
+.DS_Store
