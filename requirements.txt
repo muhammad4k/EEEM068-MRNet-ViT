@@ -1,0 +1,12 @@
+torch
+torchvision
+timm
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+Pillow
+tqdm
+huggingface_hub
+jupyter
